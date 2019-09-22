@@ -30,8 +30,10 @@ initial() {
     # terminal-based package manager (terminal interface only)
 	
 	PACKAGES=""
-	PACKAGES+=" libreadline-dev"
 	PACKAGES+=" bash-completion"
+	PACKAGES+=" dialog"
+	PACKAGES+=" pv"
+	PACKAGES+=" libreadline-dev"
 	PACKAGES+=" figlet"
 	PACKAGES+=" nano"
 	PACKAGES+=" mc"
