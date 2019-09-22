@@ -33,6 +33,7 @@ initial() {
 	PACKAGES+=" bash-completion"
 	PACKAGES+=" dialog"
 	PACKAGES+=" pv"
+	PACKAGES+=" wget"
 	PACKAGES+=" libreadline-dev"
 	PACKAGES+=" figlet"
 	PACKAGES+=" nano"
