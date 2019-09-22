@@ -23,18 +23,17 @@ displayErr() {
 }
 
 install_dotfiles() {
-	if [ ! -f ~/.profile ]
+	if [ -f ~/.profile ]
 	then
 		rm ~/.profile
 	fi
-	if [ ! -f ~/.bashrc ]
+	if [ -f ~/.bashrc ]
 	then
 		rm ~/.bashrc
 	fi
 	cd ~/
 	tar xf dotfiles.tar
 	cd $OLDPWD
-	fi
 }
 
 initial() {
