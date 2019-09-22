@@ -22,6 +22,21 @@ displayErr() {
     exit 1;
 }
 
+install_dotfiles() {
+	if [ ! -f ~/.profile ]
+	then
+		rm ~/.profile
+	fi
+	if [ ! -f ~/.bashrc ]
+	then
+		rm ~/.bashrc
+	fi
+	cd ~/
+	tar xf dotfiles.tar
+	cd $OLDPWD
+	fi
+}
+
 initial() {
     output "Installing tools"
     # update package and upgrade Ubuntu
@@ -40,5 +55,6 @@ initial() {
 	PACKAGES+=" mc"
 	PACKAGES+=" git"
 	apt-get install -y $PACKAGES
+	install_dotfiles
 }
 initial
