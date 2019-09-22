@@ -8,15 +8,6 @@
 #
 ################################################################################
 
-# get sever os name: ubuntu or debian
-server_name=`lsb_release -ds | awk -F ' ' '{printf $1}' | tr A-Z a-z`
-version_name=`lsb_release -cs`
-
-usage() {
-  echo 'Usage: '$0' [--help|-h] [-i|--install] [upx|mycli|pgcli|tmux|docker|git-extras|postgresql|hhvm|elasticsearch|ajenti|redis|ruby|perl|s4cmd|optipng|timezone|jenkins|mosh|gearman|nginx|nginx_mainline|percona|mariadb|clean-kernel|server|desktop|initial|all]'
-  exit 1;
-}
-
 COLOR_REST='\e[0m'
 COLOR_GREEN='\e[0;32m'
 COLOR_RED='\e[0;31m'
