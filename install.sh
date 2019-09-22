@@ -34,6 +34,7 @@ displayErr() {
 initial() {
     output "Installing tools"
     # update package and upgrade Ubuntu
+    mkdir /etc/bash_completion.d
     apt-get -y update && apt-get -y upgrade
     # terminal-based package manager (terminal interface only)
 	
@@ -46,3 +47,4 @@ initial() {
 	PACKAGES+=" git"
 	apt-get install -y $PACKAGES
 }
+initial
