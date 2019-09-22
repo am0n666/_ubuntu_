@@ -32,9 +32,17 @@ displayErr() {
 }
 
 initial() {
-    output "Update all packages and install aptitude tool command."
+    output "Installing tools"
     # update package and upgrade Ubuntu
     apt-get -y update && apt-get -y upgrade
     # terminal-based package manager (terminal interface only)
-    apt-get -y install software-properties-common
+	
+	PACKAGES=""
+	PACKAGES+=" libreadline-dev"
+	PACKAGES+=" bash-completion"
+	PACKAGES+=" figlet"
+	PACKAGES+=" nano"
+	PACKAGES+=" mc"
+	PACKAGES+=" git"
+	apt-get install -y $PACKAGES
 }
