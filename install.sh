@@ -44,6 +44,7 @@ initial() {
     # terminal-based package manager (terminal interface only)
 	
 	PACKAGES=""
+	PACKAGES+=" software-properties-common"
 	PACKAGES+=" bash-completion"
 	PACKAGES+=" dialog"
 	PACKAGES+=" pv"
