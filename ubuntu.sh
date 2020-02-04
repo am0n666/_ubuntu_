@@ -8,7 +8,7 @@ tarball="ubuntu.tar.gz"
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
 		echo "downloading ubuntu-image"
-		case `dpkg --print-architecture` in
+		case `uname -m` in
 		aarch64)
 			archurl="arm64" ;;
 		arm)
@@ -22,13 +22,14 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget "https://partner-images.canonical.com/core/disco/current/ubuntu-disco-core-cloudimg-${archurl}-root.tar.gz" -O $tarball
+		wget "https://partner-images.canonical.com/core/eoan/current/ubuntu-eoan-core-cloudimg-${archurl}-root.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
 	echo "decompressing ubuntu image"
-	proot --link2symlink tar -xf ${cur}/${tarball} --exclude='dev'||:
+#	proot --link2symlink tar -xf ${cur}/${tarball} --exclude='dev'||:
+	tar -xf ${cur}/${tarball} --exclude='dev'||:
 	echo "fixing nameserver, otherwise it can't connect to the internet"
 	echo "nameserver 1.1.1.1" > etc/resolv.conf
 	cd "$cur"
